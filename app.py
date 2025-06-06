@@ -35,8 +35,9 @@ if user_input:
         if not recommendation.empty:
             st.subheader("🎶 推薦音樂")
             for idx, row in recommendation.iterrows():
-                st.markdown(f"🎵 **{row['歌名']}** by {row['歌手']}")
-                st.markdown(f"[▶ 點我收聽]({row['連結']})")
+                st.markdown(f"🎵 **{row['歌名']}**")
+                st.audio(row["連結"])
+
         else:
             st.warning("資料庫中沒有符合此情緒的音樂。")
     else:
